@@ -21,9 +21,9 @@ def load(args):
     cc_flag = []
 
     if cuda is not None:
-         _, bare_metal_major, bare_metal_minor = _get_cuda_bare_metal_version(
+        _, bare_metal_major, bare_metal_minor = _get_cuda_bare_metal_version(
             cpp_extension.CUDA_HOME
-         )
+        )
         if int(bare_metal_major) >= 11:
             cc_flag.append('-gencode')
             cc_flag.append('arch=compute_80,code=sm_80')
